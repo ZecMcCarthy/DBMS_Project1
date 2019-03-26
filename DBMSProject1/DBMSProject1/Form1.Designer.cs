@@ -34,6 +34,7 @@
             this.Username_label = new System.Windows.Forms.Label();
             this.Password_label = new System.Windows.Forms.Label();
             this.Signin_button = new System.Windows.Forms.Button();
+            this.CreatAccount_button = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // Inititalize_button
@@ -81,18 +82,28 @@
             // 
             // Signin_button
             // 
-            this.Signin_button.Location = new System.Drawing.Point(341, 256);
+            this.Signin_button.Location = new System.Drawing.Point(252, 266);
             this.Signin_button.Name = "Signin_button";
             this.Signin_button.Size = new System.Drawing.Size(105, 37);
             this.Signin_button.TabIndex = 5;
             this.Signin_button.Text = "Sign In";
             this.Signin_button.UseVisualStyleBackColor = true;
             // 
+            // CreatAccount_button
+            // 
+            this.CreatAccount_button.Location = new System.Drawing.Point(394, 266);
+            this.CreatAccount_button.Name = "CreatAccount_button";
+            this.CreatAccount_button.Size = new System.Drawing.Size(134, 37);
+            this.CreatAccount_button.TabIndex = 6;
+            this.CreatAccount_button.Text = "Create Account";
+            this.CreatAccount_button.UseVisualStyleBackColor = true;
+            // 
             // GUI
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.CreatAccount_button);
             this.Controls.Add(this.Signin_button);
             this.Controls.Add(this.Password_label);
             this.Controls.Add(this.Username_label);
@@ -114,6 +125,7 @@
         private System.Windows.Forms.Label Username_label;
         private System.Windows.Forms.Label Password_label;
         private System.Windows.Forms.Button Signin_button;
+        private System.Windows.Forms.Button CreatAccount_button;
     }
 }
 
