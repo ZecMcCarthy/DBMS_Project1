@@ -10,24 +10,14 @@ using System.Windows.Forms;
 
 namespace DBMSProject1
 {
-    public partial class GUI : Form
+    public partial class CreateAccount : Form
     {
-        public GUI()
+        public CreateAccount()
         {
             InitializeComponent();
         }
 
-        private void Inititalize_button_Click(object sender, EventArgs e)
-        {
-            
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void CreatAccount_button_Click(object sender, EventArgs e)
+        private void textBox1_TextChanged(object sender, EventArgs e)
         {
 
         }
