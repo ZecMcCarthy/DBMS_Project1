@@ -10,11 +10,21 @@ using System.Windows.Forms;
 
 namespace DBMSProject1
 {
-    public partial class Form1 : Form
+    public partial class GUI : Form
     {
-        public Form1()
+        public GUI()
         {
             InitializeComponent();
+        }
+
+        private void Inititalize_button_Click(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
