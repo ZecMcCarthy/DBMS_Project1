@@ -42,7 +42,7 @@
             this.CreateNewUserAccount_label.Font = new System.Drawing.Font("Microsoft Sans Serif", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.CreateNewUserAccount_label.Location = new System.Drawing.Point(186, 33);
             this.CreateNewUserAccount_label.Name = "CreateNewUserAccount_label";
-            this.CreateNewUserAccount_label.Size = new System.Drawing.Size(410, 39);
+            this.CreateNewUserAccount_label.Size = new System.Drawing.Size(397, 38);
             this.CreateNewUserAccount_label.TabIndex = 0;
             this.CreateNewUserAccount_label.Text = "Create New User Account";
             // 
@@ -54,6 +54,7 @@
             this.CreateAccount_button1.TabIndex = 12;
             this.CreateAccount_button1.Text = "Create Account";
             this.CreateAccount_button1.UseVisualStyleBackColor = true;
+            this.CreateAccount_button1.Click += new System.EventHandler(this.CreateAccount_button1_Click);
             // 
             // Password_label
             // 

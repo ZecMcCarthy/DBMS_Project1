@@ -21,5 +21,10 @@ namespace DBMSProject1
         {
 
         }
+
+        private void CreateAccount_button1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

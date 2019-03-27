@@ -89,6 +89,7 @@
             this.Signin_button.TabIndex = 5;
             this.Signin_button.Text = "Sign In";
             this.Signin_button.UseVisualStyleBackColor = true;
+            this.Signin_button.Click += new System.EventHandler(this.Signin_button_Click);
             // 
             // CreatAccount_button
             // 
@@ -106,7 +107,7 @@
             this.CreateNewUserAccount_label.Font = new System.Drawing.Font("Microsoft Sans Serif", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.CreateNewUserAccount_label.Location = new System.Drawing.Point(245, 65);
             this.CreateNewUserAccount_label.Name = "CreateNewUserAccount_label";
-            this.CreateNewUserAccount_label.Size = new System.Drawing.Size(311, 39);
+            this.CreateNewUserAccount_label.Size = new System.Drawing.Size(302, 38);
             this.CreateNewUserAccount_label.TabIndex = 7;
             this.CreateNewUserAccount_label.Text = "Enter User Account";
             // 
