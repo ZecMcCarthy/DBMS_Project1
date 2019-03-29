@@ -22,7 +22,7 @@ namespace DBMSProject1
             MySqlConnectionStringBuilder builder = new MySqlConnectionStringBuilder();
             builder.Server = "127.0.0.1";
             builder.UserID = "root";
-            builder.Password = "Ig0tj0y!";
+            builder.Password = "********";
             builder.Port = 3306;
             builder.Database = "studentgrades";
             connection = new MySqlConnection(builder.ToString());
