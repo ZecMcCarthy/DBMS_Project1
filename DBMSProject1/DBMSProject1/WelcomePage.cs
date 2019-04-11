@@ -21,5 +21,10 @@ namespace DBMSProject1
         {
 
         }
+
+        private void CreateBlog_button1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

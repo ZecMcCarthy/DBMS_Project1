@@ -52,6 +52,7 @@
             this.CreateBlog_button1.TabIndex = 2;
             this.CreateBlog_button1.Text = "Create Blog";
             this.CreateBlog_button1.UseVisualStyleBackColor = true;
+            this.CreateBlog_button1.Click += new System.EventHandler(this.CreateBlog_button1_Click);
             // 
             // SearchBlog_textBox
             // 
