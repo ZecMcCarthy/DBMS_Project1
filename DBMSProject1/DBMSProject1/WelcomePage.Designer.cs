@@ -29,23 +29,54 @@
         private void InitializeComponent()
         {
             this.Welcome_label = new System.Windows.Forms.Label();
+            this.CreateBlog_button1 = new System.Windows.Forms.Button();
+            this.SearchBlog_textBox = new System.Windows.Forms.TextBox();
+            this.SearchBlog_button = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // Welcome_label
             // 
             this.Welcome_label.AutoSize = true;
             this.Welcome_label.Font = new System.Drawing.Font("Microsoft Sans Serif", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Welcome_label.Location = new System.Drawing.Point(307, 76);
+            this.Welcome_label.Location = new System.Drawing.Point(294, 25);
             this.Welcome_label.Name = "Welcome_label";
             this.Welcome_label.Size = new System.Drawing.Size(153, 38);
             this.Welcome_label.TabIndex = 1;
             this.Welcome_label.Text = "Welcome";
+            // 
+            // CreateBlog_button1
+            // 
+            this.CreateBlog_button1.Location = new System.Drawing.Point(319, 230);
+            this.CreateBlog_button1.Name = "CreateBlog_button1";
+            this.CreateBlog_button1.Size = new System.Drawing.Size(103, 38);
+            this.CreateBlog_button1.TabIndex = 2;
+            this.CreateBlog_button1.Text = "Create Blog";
+            this.CreateBlog_button1.UseVisualStyleBackColor = true;
+            // 
+            // SearchBlog_textBox
+            // 
+            this.SearchBlog_textBox.Location = new System.Drawing.Point(256, 156);
+            this.SearchBlog_textBox.Name = "SearchBlog_textBox";
+            this.SearchBlog_textBox.Size = new System.Drawing.Size(244, 22);
+            this.SearchBlog_textBox.TabIndex = 3;
+            // 
+            // SearchBlog_button
+            // 
+            this.SearchBlog_button.Location = new System.Drawing.Point(147, 148);
+            this.SearchBlog_button.Name = "SearchBlog_button";
+            this.SearchBlog_button.Size = new System.Drawing.Size(103, 38);
+            this.SearchBlog_button.TabIndex = 4;
+            this.SearchBlog_button.Text = "Search Blog";
+            this.SearchBlog_button.UseVisualStyleBackColor = true;
             // 
             // WelcomePage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.SearchBlog_button);
+            this.Controls.Add(this.SearchBlog_textBox);
+            this.Controls.Add(this.CreateBlog_button1);
             this.Controls.Add(this.Welcome_label);
             this.Name = "WelcomePage";
             this.Text = "WelcomePage";
@@ -58,5 +89,8 @@
         #endregion
 
         private System.Windows.Forms.Label Welcome_label;
+        private System.Windows.Forms.Button CreateBlog_button1;
+        private System.Windows.Forms.TextBox SearchBlog_textBox;
+        private System.Windows.Forms.Button SearchBlog_button;
     }
 }
