@@ -24,7 +24,7 @@ namespace DBMSProject1
             builder.UserID = "root";
             builder.Password = "********";
             builder.Port = 3306;
-            builder.Database = "studentgrades";
+            builder.Database = "sampledb";
             connection = new MySqlConnection(builder.ToString());
 
             try
