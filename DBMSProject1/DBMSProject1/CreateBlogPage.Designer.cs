@@ -33,7 +33,7 @@
             this.AddTag_button1 = new System.Windows.Forms.Button();
             this.PostBlog_button1 = new System.Windows.Forms.Button();
             this.descriptionBox = new System.Windows.Forms.TextBox();
-            this.button1 = new System.Windows.Forms.Button();
+            this.backButton = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.tagBox = new System.Windows.Forms.TextBox();
@@ -54,6 +54,7 @@
             // 
             this.subjectBox.Location = new System.Drawing.Point(91, 82);
             this.subjectBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.subjectBox.MaxLength = 150;
             this.subjectBox.Name = "subjectBox";
             this.subjectBox.Size = new System.Drawing.Size(599, 22);
             this.subjectBox.TabIndex = 3;
@@ -83,21 +84,23 @@
             // descriptionBox
             // 
             this.descriptionBox.Location = new System.Drawing.Point(91, 134);
-            this.descriptionBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.descriptionBox.Margin = new System.Windows.Forms.Padding(4);
+            this.descriptionBox.MaxLength = 250;
             this.descriptionBox.Multiline = true;
             this.descriptionBox.Name = "descriptionBox";
             this.descriptionBox.Size = new System.Drawing.Size(599, 134);
             this.descriptionBox.TabIndex = 6;
             // 
-            // button1
+            // backButton
             // 
-            this.button1.Location = new System.Drawing.Point(16, 15);
-            this.button1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(81, 28);
-            this.button1.TabIndex = 7;
-            this.button1.Text = "Back";
-            this.button1.UseVisualStyleBackColor = true;
+            this.backButton.Location = new System.Drawing.Point(16, 15);
+            this.backButton.Margin = new System.Windows.Forms.Padding(4);
+            this.backButton.Name = "backButton";
+            this.backButton.Size = new System.Drawing.Size(81, 28);
+            this.backButton.TabIndex = 7;
+            this.backButton.Text = "Back";
+            this.backButton.UseVisualStyleBackColor = true;
+            this.backButton.Click += new System.EventHandler(this.button1_Click);
             // 
             // label1
             // 
@@ -122,7 +125,8 @@
             // tagBox
             // 
             this.tagBox.Location = new System.Drawing.Point(91, 329);
-            this.tagBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tagBox.Margin = new System.Windows.Forms.Padding(4);
+            this.tagBox.MaxLength = 19;
             this.tagBox.Multiline = true;
             this.tagBox.Name = "tagBox";
             this.tagBox.Size = new System.Drawing.Size(313, 30);
@@ -147,7 +151,7 @@
             this.Controls.Add(this.tagBox);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.backButton);
             this.Controls.Add(this.descriptionBox);
             this.Controls.Add(this.PostBlog_button1);
             this.Controls.Add(this.AddTag_button1);
@@ -168,7 +172,7 @@
         private System.Windows.Forms.Button AddTag_button1;
         private System.Windows.Forms.Button PostBlog_button1;
         private System.Windows.Forms.TextBox descriptionBox;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button backButton;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox tagBox;

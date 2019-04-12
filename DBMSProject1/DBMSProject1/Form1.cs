@@ -27,9 +27,38 @@ namespace DBMSProject1
 
         private void Inititalize_button_Click(object sender, EventArgs e)
         {
-            query = "Drop table if exists Accounts;\ncreate table Accounts(Username varchar(20) not null,UserPassword varchar(20) not null,primary key(Username)); ";//mysql code to initialize a table
+            query = "delete from comments; delete from blogtags; delete from follow; delete from hobbies;";//delete values in tables with dependencies
             command = new MySqlCommand(query, sql);
-            command.ExecuteNonQuery();//execute the sql query
+            try
+            {
+                command.ExecuteNonQuery();//execute the sql query
+            }
+            catch(MySqlException ex)
+            {
+                Console.WriteLine("Error: {0}", ex.ToString());//display the error
+            }
+
+            query = "delete from blogs;";//delete values in tables with dependencies
+            command = new MySqlCommand(query, sql);
+            try
+            {
+                command.ExecuteNonQuery();//execute the sql query
+            }
+            catch (MySqlException ex)
+            {
+                Console.WriteLine("Error: {0}", ex.ToString());//display the error
+            }
+
+            query = "delete from users;";//delete values in tables with dependencies
+            command = new MySqlCommand(query, sql);
+            try
+            {
+                command.ExecuteNonQuery();//execute the sql query
+            }
+            catch (MySqlException ex)
+            {
+                Console.WriteLine("Error: {0}", ex.ToString());//display the error
+            }
         }
 
         private void label1_Click(object sender, EventArgs e)
@@ -75,7 +104,7 @@ namespace DBMSProject1
 
                     WelcomePage newPage; //create new welcome page
 
-                    newPage = new WelcomePage();
+                    newPage = new WelcomePage(sql, username);//pass the user to other GUI components
                     newPage.ShowDialog(); //open welcome page
 
                     this.Close(); //form will close when child is manually closed

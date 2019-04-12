@@ -8,13 +8,21 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+using MySql.Data;
+using MySql.Data.MySqlClient;
+
 namespace DBMSProject1
 {
     public partial class WelcomePage : Form
     {
-        public WelcomePage()
+        private string user;
+        private MySqlConnection sql;
+
+        public WelcomePage(MySqlConnection connection, string username)
         {
             InitializeComponent();
+            sql = connection;//get the mysql connection
+            user = username;//store the current user
         }
 
         private void WelcomePage_Load(object sender, EventArgs e)
@@ -24,7 +32,12 @@ namespace DBMSProject1
 
         private void CreateBlog_button1_Click(object sender, EventArgs e)
         {
+            CreateBlogPage newPage; //create new welcome page
 
+            newPage = new CreateBlogPage(sql, user);
+            newPage.ShowDialog(); //open Create new blog page
+
+            this.Close();
         }
     }
 }
