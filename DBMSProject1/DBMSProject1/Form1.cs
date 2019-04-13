@@ -81,7 +81,7 @@ namespace DBMSProject1
             String username = Username_textbox.Text; //take username and password from textboxes 
             String password = Password_textbox.Text;
 
-            query = "select * from accounts where Username = @usrnme and UserPassword = @passwd"; //create query that makes a table of usernames and passwords that match user-inputted credentials
+            query = "select * from users where username = @usrnme and password = @passwd"; //create query that makes a table of usernames and passwords that match user-inputted credentials
             command = new MySqlCommand(query, sql);
 
             command.Parameters.Add("@usrnme", MySqlDbType.VarChar, 20).Value = username; //adding parameters through this method prevents SQL injection

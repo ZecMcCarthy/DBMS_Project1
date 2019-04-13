@@ -37,12 +37,14 @@ namespace DBMSProject1
 
             if(username != "" && password != "" ) //check if nothing entered - would let empty string be entered as username or password
             {
-                query = "insert into accounts values ( @usrnme, @passwd);"; //creation of insert query
+                query = "insert into users values ( @usrnme, @passwd, @tempFirstName, @tempLastName, @tempEmail);"; //creation of insert query
                 command = new MySqlCommand(query, sql);
 
                 command.Parameters.Add("@usrnme", MySqlDbType.VarChar, 20).Value = username; //adding parameters through this method prevents SQL injection
                 command.Parameters.Add("@passwd", MySqlDbType.VarChar, 20).Value = password; //adding parameters through this method prevents SQL injection
-
+                command.Parameters.Add("@tempFirstName", MySqlDbType.VarChar, 20).Value = username;
+                command.Parameters.Add("@tempLastName", MySqlDbType.VarChar, 20).Value = username;
+                command.Parameters.Add("@tempEmail", MySqlDbType.VarChar, 20).Value = username;
 
                 try
                 {
