@@ -36,8 +36,6 @@ namespace DBMSProject1
 
             newPage = new CreateBlogPage(sql, user);
             newPage.ShowDialog(); //open Create new blog page
-
-            this.Close();
         }
     }
 }

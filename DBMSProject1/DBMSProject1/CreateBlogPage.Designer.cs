@@ -30,14 +30,16 @@
         {
             this.Welcome_label = new System.Windows.Forms.Label();
             this.subjectBox = new System.Windows.Forms.TextBox();
-            this.AddTag_button1 = new System.Windows.Forms.Button();
+            this.AddTag_button = new System.Windows.Forms.Button();
             this.PostBlog_button1 = new System.Windows.Forms.Button();
             this.descriptionBox = new System.Windows.Forms.TextBox();
             this.backButton = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.tagBox = new System.Windows.Forms.TextBox();
-            this.button2 = new System.Windows.Forms.Button();
+            this.RemoveTag = new System.Windows.Forms.Button();
+            this.TagsLabel = new System.Windows.Forms.Label();
+            this.errorLabel = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // Welcome_label
@@ -60,15 +62,16 @@
             this.subjectBox.TabIndex = 3;
             this.subjectBox.TextChanged += new System.EventHandler(this.subjectBox_TextChanged);
             // 
-            // AddTag_button1
+            // AddTag_button
             // 
-            this.AddTag_button1.Location = new System.Drawing.Point(431, 328);
-            this.AddTag_button1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.AddTag_button1.Name = "AddTag_button1";
-            this.AddTag_button1.Size = new System.Drawing.Size(75, 31);
-            this.AddTag_button1.TabIndex = 4;
-            this.AddTag_button1.Text = "Add Tag";
-            this.AddTag_button1.UseVisualStyleBackColor = true;
+            this.AddTag_button.Location = new System.Drawing.Point(431, 328);
+            this.AddTag_button.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.AddTag_button.Name = "AddTag_button";
+            this.AddTag_button.Size = new System.Drawing.Size(75, 31);
+            this.AddTag_button.TabIndex = 4;
+            this.AddTag_button.Text = "Add Tag";
+            this.AddTag_button.UseVisualStyleBackColor = true;
+            this.AddTag_button.Click += new System.EventHandler(this.AddTag_button_Click);
             // 
             // PostBlog_button1
             // 
@@ -133,28 +136,47 @@
             this.tagBox.TabIndex = 10;
             this.tagBox.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
-            // button2
+            // RemoveTag
             // 
-            this.button2.Location = new System.Drawing.Point(562, 328);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(128, 31);
-            this.button2.TabIndex = 11;
-            this.button2.Text = "Remove all tags";
-            this.button2.UseVisualStyleBackColor = true;
+            this.RemoveTag.Location = new System.Drawing.Point(562, 328);
+            this.RemoveTag.Name = "RemoveTag";
+            this.RemoveTag.Size = new System.Drawing.Size(128, 31);
+            this.RemoveTag.TabIndex = 11;
+            this.RemoveTag.Text = "Remove all tags";
+            this.RemoveTag.UseVisualStyleBackColor = true;
+            this.RemoveTag.Click += new System.EventHandler(this.RemoveTag_Click);
+            // 
+            // TagsLabel
+            // 
+            this.TagsLabel.AutoSize = true;
+            this.TagsLabel.Location = new System.Drawing.Point(91, 289);
+            this.TagsLabel.Name = "TagsLabel";
+            this.TagsLabel.Size = new System.Drawing.Size(0, 17);
+            this.TagsLabel.TabIndex = 12;
+            // 
+            // errorLabel
+            // 
+            this.errorLabel.AutoSize = true;
+            this.errorLabel.Location = new System.Drawing.Point(91, 401);
+            this.errorLabel.Name = "errorLabel";
+            this.errorLabel.Size = new System.Drawing.Size(0, 17);
+            this.errorLabel.TabIndex = 13;
             // 
             // CreateBlogPage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.button2);
+            this.Controls.Add(this.errorLabel);
+            this.Controls.Add(this.TagsLabel);
+            this.Controls.Add(this.RemoveTag);
             this.Controls.Add(this.tagBox);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.backButton);
             this.Controls.Add(this.descriptionBox);
             this.Controls.Add(this.PostBlog_button1);
-            this.Controls.Add(this.AddTag_button1);
+            this.Controls.Add(this.AddTag_button);
             this.Controls.Add(this.subjectBox);
             this.Controls.Add(this.Welcome_label);
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -169,13 +191,15 @@
 
         private System.Windows.Forms.Label Welcome_label;
         private System.Windows.Forms.TextBox subjectBox;
-        private System.Windows.Forms.Button AddTag_button1;
+        private System.Windows.Forms.Button AddTag_button;
         private System.Windows.Forms.Button PostBlog_button1;
         private System.Windows.Forms.TextBox descriptionBox;
         private System.Windows.Forms.Button backButton;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox tagBox;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button RemoveTag;
+        private System.Windows.Forms.Label TagsLabel;
+        private System.Windows.Forms.Label errorLabel;
     }
 }
