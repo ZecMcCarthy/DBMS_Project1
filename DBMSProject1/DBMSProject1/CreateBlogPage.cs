@@ -139,6 +139,11 @@ namespace DBMSProject1
             tagBox.Clear();//clear out tag box for next tag
         }
 
+        private void descriptionBox_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
         private void RemoveTag_Click(object sender, EventArgs e)//clear all tags on blog
         {
             TagsLabel.Text = "";//set the label so it displays no tags

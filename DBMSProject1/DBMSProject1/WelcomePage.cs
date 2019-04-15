@@ -37,5 +37,18 @@ namespace DBMSProject1
             newPage = new CreateBlogPage(sql, user);
             newPage.ShowDialog(); //open Create new blog page
         }
+
+        private void SearchBlog_textBox_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void SearchBlog_button_Click(object sender, EventArgs e)
+        {
+            SearchInterface newPage; //create new welcome page
+
+            newPage = new SearchInterface(sql, user, SearchBlog_textBox.Text);
+            newPage.ShowDialog(); //open Create new blog page
+        }
     }
 }

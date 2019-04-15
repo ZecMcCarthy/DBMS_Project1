@@ -28,22 +28,28 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.SearchResults_textBox = new System.Windows.Forms.TextBox();
+            this.Welcome_label = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
-            // SearchResults_textBox
+            // Welcome_label
             // 
-            this.SearchResults_textBox.Location = new System.Drawing.Point(241, 201);
-            this.SearchResults_textBox.Name = "SearchResults_textBox";
-            this.SearchResults_textBox.Size = new System.Drawing.Size(218, 22);
-            this.SearchResults_textBox.TabIndex = 0;
+            this.Welcome_label.AutoSize = true;
+            this.Welcome_label.Font = new System.Drawing.Font("Microsoft Sans Serif", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Welcome_label.Location = new System.Drawing.Point(484, 9);
+            this.Welcome_label.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.Welcome_label.Name = "Welcome_label";
+            this.Welcome_label.Size = new System.Drawing.Size(194, 61);
+            this.Welcome_label.TabIndex = 9;
+            this.Welcome_label.Text = "Search";
+            this.Welcome_label.Click += new System.EventHandler(this.Welcome_label_Click);
             // 
             // SearchInterface
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.SearchResults_textBox);
+            this.ClientSize = new System.Drawing.Size(1200, 703);
+            this.Controls.Add(this.Welcome_label);
+            this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "SearchInterface";
             this.Text = "SearchInterface";
             this.ResumeLayout(false);
@@ -53,6 +59,6 @@
 
         #endregion
 
-        private System.Windows.Forms.TextBox SearchResults_textBox;
+        private System.Windows.Forms.Label Welcome_label;
     }
 }
