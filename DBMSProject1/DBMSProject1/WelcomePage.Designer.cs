@@ -81,6 +81,7 @@
             this.AdvancedSearch_button1.TabIndex = 5;
             this.AdvancedSearch_button1.Text = "Advanced Search ";
             this.AdvancedSearch_button1.UseVisualStyleBackColor = true;
+            this.AdvancedSearch_button1.Click += new System.EventHandler(this.AdvancedSearch_button1_Click);
             // 
             // WelcomePage
             // 

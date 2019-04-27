@@ -50,5 +50,13 @@ namespace DBMSProject1
             newPage = new SearchInterface(sql, user, SearchBlog_textBox.Text);
             newPage.ShowDialog(); //open Create new blog page
         }
+
+        private void AdvancedSearch_button1_Click(object sender, EventArgs e)
+        {
+            AdvancedSearchPage newPage;
+
+            newPage = new AdvancedSearchPage(sql, user);
+            newPage = 
+        }
     }
 }
