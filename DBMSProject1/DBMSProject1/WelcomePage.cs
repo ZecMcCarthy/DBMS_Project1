@@ -56,7 +56,7 @@ namespace DBMSProject1
             AdvancedSearchPage newPage;
 
             newPage = new AdvancedSearchPage(sql, user);
-            newPage = 
+            newPage.ShowDialog();
         }
     }
 }

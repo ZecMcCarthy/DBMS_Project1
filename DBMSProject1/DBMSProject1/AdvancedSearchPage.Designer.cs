@@ -42,6 +42,7 @@
             this.PositiveComments = new System.Windows.Forms.Button();
             this.NoComments = new System.Windows.Forms.Button();
             this.NegativeComments = new System.Windows.Forms.Button();
+            this.ErrorBox = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // Welcome_label
@@ -197,6 +198,7 @@
             this.PositiveComments.TabIndex = 13;
             this.PositiveComments.Text = "Search all blogs from user with only positive comments";
             this.PositiveComments.UseVisualStyleBackColor = true;
+            this.PositiveComments.Click += new System.EventHandler(this.PositiveComments_Click);
             // 
             // NoComments
             // 
@@ -216,11 +218,19 @@
             this.NegativeComments.Text = "Search all users who only post negative comments";
             this.NegativeComments.UseVisualStyleBackColor = true;
             // 
+            // ErrorBox
+            // 
+            this.ErrorBox.Location = new System.Drawing.Point(175, 559);
+            this.ErrorBox.Name = "ErrorBox";
+            this.ErrorBox.Size = new System.Drawing.Size(412, 50);
+            this.ErrorBox.TabIndex = 16;
+            // 
             // AdvancedSearchPage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 667);
+            this.Controls.Add(this.ErrorBox);
             this.Controls.Add(this.NegativeComments);
             this.Controls.Add(this.NoComments);
             this.Controls.Add(this.PositiveComments);
@@ -258,5 +268,6 @@
         private System.Windows.Forms.Button PositiveComments;
         private System.Windows.Forms.Button NoComments;
         private System.Windows.Forms.Button NegativeComments;
+        private System.Windows.Forms.Label ErrorBox;
     }
 }
