@@ -21,6 +21,10 @@ namespace DBMSProject1
             {
                 ListBox.Items.Add(data[i]);
             }
+            if(data.Count < 1)//no items
+            {
+                ListBox.Items.Add("Error: no data was found");
+            }
         }
 
         private void Title_Click(object sender, EventArgs e)

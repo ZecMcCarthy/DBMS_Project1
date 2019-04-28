@@ -136,6 +136,58 @@ namespace DBMSProject1
             }
         }
 
+        private void NoComments_Click(object sender, EventArgs e)
+        {
+            query = "drop view if exists allusers; drop view if exists comusers; create view allusers as select distinct username as author from users; create view comusers as select distinct author from comments; select author from allusers left join comusers using(author) where comusers.author is null;";
+            string title = "Users who haven't posted any comments";
+            MySqlDataReader reader;
+            command = new MySqlCommand(query, sql);
+            List<String> users = new List<String>();//list that will store all of our data from the query
+            try
+            {
+                reader = command.ExecuteReader();//read in our data
+                while (reader.Read())
+                {
+                    users.Add(reader[0].ToString());
+                }
+                reader.Close();//close the reader now that we are done with it
+                UserList newPage;//will open our next GUI
+
+                newPage = new UserList(title, users);
+                newPage.ShowDialog();
+            }
+            catch (MySqlException ex)
+            {
+                ErrorBox.Text = $"Error: {ex.ToString()}";
+            }
+        }
+
+        private void NegativeComments_Click(object sender, EventArgs e)
+        {
+            query = "drop view if exists poscom; drop view if exists negcom; create view poscom as select distinct author from (select * from comments where(sentiment = \"Positive\"))alias; create view negcom as select distinct author from (select * from comments where(sentiment = \"Negative\"))alias; select author from negcom left join poscom using(author) where poscom.author is null;";//this is the sql quey needed for this search
+            string title = "Users who only post negative comments";
+            MySqlDataReader reader;
+            command = new MySqlCommand(query, sql);
+            List<String> users = new List<String>();//list that will store all of our data from the query
+            try
+            {
+                reader = command.ExecuteReader();//read in our data
+                while(reader.Read())
+                {
+                    users.Add(reader[0].ToString());
+                }
+                reader.Close();//close the reader now that we are done with it
+                UserList newPage;//will open our next GUI
+
+                newPage = new UserList(title, users);
+                newPage.ShowDialog();
+            }
+            catch (MySqlException ex)
+            {
+                ErrorBox.Text = $"Error: {ex.ToString()}";
+            }
+        }
+
         public AdvancedSearchPage(MySqlConnection connection, string username)
         {
             sql = connection;
