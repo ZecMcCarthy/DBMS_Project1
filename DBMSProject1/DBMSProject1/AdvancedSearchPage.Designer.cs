@@ -49,9 +49,10 @@
             // 
             this.Welcome_label.AutoSize = true;
             this.Welcome_label.Font = new System.Drawing.Font("Microsoft Sans Serif", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Welcome_label.Location = new System.Drawing.Point(194, 43);
+            this.Welcome_label.Location = new System.Drawing.Point(291, 67);
+            this.Welcome_label.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.Welcome_label.Name = "Welcome_label";
-            this.Welcome_label.Size = new System.Drawing.Size(398, 38);
+            this.Welcome_label.Size = new System.Drawing.Size(639, 61);
             this.Welcome_label.TabIndex = 2;
             this.Welcome_label.Text = "Advanced Search Options";
             // 
@@ -72,18 +73,20 @@
             "10",
             "11",
             "12"});
-            this.MonthBox.Location = new System.Drawing.Point(175, 187);
+            this.MonthBox.Location = new System.Drawing.Point(262, 292);
+            this.MonthBox.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.MonthBox.Name = "MonthBox";
-            this.MonthBox.Size = new System.Drawing.Size(72, 24);
+            this.MonthBox.Size = new System.Drawing.Size(106, 33);
             this.MonthBox.TabIndex = 3;
             // 
             // Slash1
             // 
             this.Slash1.AutoSize = true;
             this.Slash1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Slash1.Location = new System.Drawing.Point(253, 187);
+            this.Slash1.Location = new System.Drawing.Point(380, 292);
+            this.Slash1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.Slash1.Name = "Slash1";
-            this.Slash1.Size = new System.Drawing.Size(14, 20);
+            this.Slash1.Size = new System.Drawing.Size(23, 32);
             this.Slash1.TabIndex = 4;
             this.Slash1.Text = "/";
             // 
@@ -122,18 +125,20 @@
             "29",
             "30",
             "31"});
-            this.DayBox.Location = new System.Drawing.Point(273, 187);
+            this.DayBox.Location = new System.Drawing.Point(410, 292);
+            this.DayBox.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.DayBox.Name = "DayBox";
-            this.DayBox.Size = new System.Drawing.Size(72, 24);
+            this.DayBox.Size = new System.Drawing.Size(106, 33);
             this.DayBox.TabIndex = 5;
             // 
             // Slash2
             // 
             this.Slash2.AutoSize = true;
             this.Slash2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Slash2.Location = new System.Drawing.Point(351, 187);
+            this.Slash2.Location = new System.Drawing.Point(526, 292);
+            this.Slash2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.Slash2.Name = "Slash2";
-            this.Slash2.Size = new System.Drawing.Size(14, 20);
+            this.Slash2.Size = new System.Drawing.Size(23, 32);
             this.Slash2.TabIndex = 6;
             this.Slash2.Text = "/";
             // 
@@ -144,57 +149,65 @@
             "2019",
             "2020",
             "2021"});
-            this.YearBox.Location = new System.Drawing.Point(371, 187);
+            this.YearBox.Location = new System.Drawing.Point(556, 292);
+            this.YearBox.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.YearBox.Name = "YearBox";
-            this.YearBox.Size = new System.Drawing.Size(72, 24);
+            this.YearBox.Size = new System.Drawing.Size(106, 33);
             this.YearBox.TabIndex = 7;
             // 
             // SearchDate
             // 
-            this.SearchDate.Location = new System.Drawing.Point(550, 172);
+            this.SearchDate.Location = new System.Drawing.Point(825, 269);
+            this.SearchDate.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.SearchDate.Name = "SearchDate";
-            this.SearchDate.Size = new System.Drawing.Size(110, 50);
+            this.SearchDate.Size = new System.Drawing.Size(165, 78);
             this.SearchDate.TabIndex = 8;
             this.SearchDate.Text = "Search most posts on date";
             this.SearchDate.UseVisualStyleBackColor = true;
             // 
             // Tag1
             // 
-            this.Tag1.Location = new System.Drawing.Point(175, 117);
+            this.Tag1.Location = new System.Drawing.Point(262, 183);
+            this.Tag1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Tag1.MaxLength = 19;
             this.Tag1.Name = "Tag1";
-            this.Tag1.Size = new System.Drawing.Size(140, 22);
+            this.Tag1.Size = new System.Drawing.Size(208, 31);
             this.Tag1.TabIndex = 9;
             // 
             // Tag2
             // 
-            this.Tag2.Location = new System.Drawing.Point(350, 117);
+            this.Tag2.Location = new System.Drawing.Point(525, 183);
+            this.Tag2.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Tag2.Name = "Tag2";
-            this.Tag2.Size = new System.Drawing.Size(140, 22);
+            this.Tag2.Size = new System.Drawing.Size(208, 31);
             this.Tag2.TabIndex = 10;
             // 
             // TagSearch
             // 
-            this.TagSearch.Location = new System.Drawing.Point(550, 117);
+            this.TagSearch.Location = new System.Drawing.Point(825, 183);
+            this.TagSearch.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.TagSearch.Name = "TagSearch";
-            this.TagSearch.Size = new System.Drawing.Size(120, 45);
+            this.TagSearch.Size = new System.Drawing.Size(180, 70);
             this.TagSearch.TabIndex = 11;
             this.TagSearch.Text = "Search user posts with tags";
             this.TagSearch.UseVisualStyleBackColor = true;
+            this.TagSearch.Click += new System.EventHandler(this.TagSearch_Click);
             // 
             // UserBox
             // 
-            this.UserBox.Location = new System.Drawing.Point(175, 258);
+            this.UserBox.Location = new System.Drawing.Point(262, 403);
+            this.UserBox.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.UserBox.MaxLength = 20;
             this.UserBox.Name = "UserBox";
-            this.UserBox.Size = new System.Drawing.Size(170, 22);
+            this.UserBox.Size = new System.Drawing.Size(253, 31);
             this.UserBox.TabIndex = 12;
             // 
             // PositiveComments
             // 
-            this.PositiveComments.Location = new System.Drawing.Point(550, 248);
+            this.PositiveComments.Location = new System.Drawing.Point(825, 388);
+            this.PositiveComments.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.PositiveComments.Name = "PositiveComments";
-            this.PositiveComments.Size = new System.Drawing.Size(140, 60);
+            this.PositiveComments.Size = new System.Drawing.Size(210, 94);
             this.PositiveComments.TabIndex = 13;
             this.PositiveComments.Text = "Search all blogs from user with only positive comments";
             this.PositiveComments.UseVisualStyleBackColor = true;
@@ -202,34 +215,37 @@
             // 
             // NoComments
             // 
-            this.NoComments.Location = new System.Drawing.Point(175, 420);
+            this.NoComments.Location = new System.Drawing.Point(262, 656);
+            this.NoComments.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.NoComments.Name = "NoComments";
-            this.NoComments.Size = new System.Drawing.Size(140, 60);
+            this.NoComments.Size = new System.Drawing.Size(210, 94);
             this.NoComments.TabIndex = 14;
             this.NoComments.Text = "Search all users who never posted a comment";
             this.NoComments.UseVisualStyleBackColor = true;
             // 
             // NegativeComments
             // 
-            this.NegativeComments.Location = new System.Drawing.Point(550, 420);
+            this.NegativeComments.Location = new System.Drawing.Point(825, 656);
+            this.NegativeComments.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.NegativeComments.Name = "NegativeComments";
-            this.NegativeComments.Size = new System.Drawing.Size(140, 60);
+            this.NegativeComments.Size = new System.Drawing.Size(210, 94);
             this.NegativeComments.TabIndex = 15;
             this.NegativeComments.Text = "Search all users who only post negative comments";
             this.NegativeComments.UseVisualStyleBackColor = true;
             // 
             // ErrorBox
             // 
-            this.ErrorBox.Location = new System.Drawing.Point(175, 559);
+            this.ErrorBox.Location = new System.Drawing.Point(262, 873);
+            this.ErrorBox.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.ErrorBox.Name = "ErrorBox";
-            this.ErrorBox.Size = new System.Drawing.Size(412, 50);
+            this.ErrorBox.Size = new System.Drawing.Size(618, 78);
             this.ErrorBox.TabIndex = 16;
             // 
             // AdvancedSearchPage
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 667);
+            this.ClientSize = new System.Drawing.Size(1200, 1042);
             this.Controls.Add(this.ErrorBox);
             this.Controls.Add(this.NegativeComments);
             this.Controls.Add(this.NoComments);
@@ -245,6 +261,7 @@
             this.Controls.Add(this.Slash1);
             this.Controls.Add(this.MonthBox);
             this.Controls.Add(this.Welcome_label);
+            this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "AdvancedSearchPage";
             this.Text = "AdvancedSearchPage";
             this.ResumeLayout(false);

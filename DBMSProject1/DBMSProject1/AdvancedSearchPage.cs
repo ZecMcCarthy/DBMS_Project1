@@ -92,6 +92,50 @@ namespace DBMSProject1
             }
         }
 
+        private void TagSearch_Click(object sender, EventArgs e) // Query #2
+        {
+            List<string> users = new List<string>();//this will store the usernames
+            query = "SELECT distinct a.postuser FROM blogs a JOIN blogtags c ON a.blogid = c.blogid  AND c.tag = @2X AND exists (SELECT * FROM blogs, blogtags WHERE (blogs.blogid = blogtags.blogid and blogtags.tag = @2Y and blogs.postuser = a.postuser and blogs.blogid != a.blogid) );";
+            command = new MySqlCommand(query, sql);
+
+            command.Parameters.Add("@2X", MySqlDbType.VarChar, 20).Value = Tag1.Text; //insert tags, prevent sql injection
+            command.Parameters.Add("@2Y", MySqlDbType.VarChar, 20).Value = Tag2.Text;
+
+            String txt = ""; //used to add names of users that fit criteria
+            int count = 0;
+            MySqlDataReader reader;
+            try
+            {
+                reader = command.ExecuteReader();//execute the sql query
+
+                while (reader.Read()) //loop through resulting table
+                {
+                    txt = reader[0].ToString(); 
+                    users.Add(txt); //grab all users that have posted blogs with these tags and add to list of users
+                    count++; 
+                }
+
+                reader.Close();
+
+            }
+            catch (MySqlException ex)
+            {
+                Console.WriteLine("Error: {0}", ex.ToString());
+            }
+            if(count == 0) //in the case that no users fit the query, notify user
+            {
+                ErrorBox.Text = "No results found for this query.";
+            }
+            else
+            {
+                UserList newPage; //create page to display resulting blogs
+
+                string title = $"Users that have posted a blogs with the tag {Tag1.Text} and {Tag2.Text}"; //generate title for new page
+                newPage = new UserList(title, users);
+                newPage.ShowDialog(); //open new window with results of query
+            }
+        }
+
         public AdvancedSearchPage(MySqlConnection connection, string username)
         {
             sql = connection;

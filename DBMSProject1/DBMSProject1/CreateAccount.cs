@@ -24,6 +24,8 @@ namespace DBMSProject1
         public CreateAccount()
         {
             InitializeComponent();
+            label1.Location = new Point(150, 60);
+
         }
 
         private void textBox1_TextChanged(object sender, EventArgs e)
@@ -34,33 +36,43 @@ namespace DBMSProject1
         {
             String username = Username_textbox1.Text; //take username and password that have been entered in textboxes
             String password = Password_textbox1.Text;
+            String passwordConfirmed = ConfirmPassword_textBox1.Text;
+            String fname = FirstName_textBox2.Text;
+            String lname = LastName_textBox3.Text;
+            String email = EmailAddress_textBox4.Text;
 
-            if(username != "" && password != "" ) //check if nothing entered - would let empty string be entered as username or password
+            if (username != "" && password != "") //check if nothing entered - would let empty string be entered as username or password
             {
-                query = "insert into users values ( @usrnme, @passwd, @tempFirstName, @tempLastName, @tempEmail);"; //creation of insert query
-                command = new MySqlCommand(query, sql);
-
-                command.Parameters.Add("@usrnme", MySqlDbType.VarChar, 20).Value = username; //adding parameters through this method prevents SQL injection
-                command.Parameters.Add("@passwd", MySqlDbType.VarChar, 20).Value = password; //adding parameters through this method prevents SQL injection
-                command.Parameters.Add("@tempFirstName", MySqlDbType.VarChar, 20).Value = username;
-                command.Parameters.Add("@tempLastName", MySqlDbType.VarChar, 20).Value = username;
-                command.Parameters.Add("@tempEmail", MySqlDbType.VarChar, 20).Value = username;
-
-                try
+                if (password == passwordConfirmed)
                 {
-                    command.ExecuteNonQuery();//execute the sql query
-                    this.Close(); //account was created, so return to main page
+                    query = "insert into users values ( @usrnme, @passwd, @tempFirstName, @tempLastName, @tempEmail);"; //creation of insert query
+                    command = new MySqlCommand(query, sql);
+
+                    command.Parameters.Add("@usrnme", MySqlDbType.VarChar, 20).Value = username; //adding parameters through this method prevents SQL injection
+                    command.Parameters.Add("@passwd", MySqlDbType.VarChar, 20).Value = password; //adding parameters through this method prevents SQL injection
+                    command.Parameters.Add("@tempFirstName", MySqlDbType.VarChar, 20).Value = fname;
+                    command.Parameters.Add("@tempLastName", MySqlDbType.VarChar, 20).Value = lname;
+                    command.Parameters.Add("@tempEmail", MySqlDbType.VarChar, 20).Value = email;
+
+                    try
+                    {
+                        command.ExecuteNonQuery();//execute the sql query
+                        this.Close(); //account was created, so return to main page
+                    }
+                    catch (MySqlException ex)
+                    {
+                        Console.WriteLine("Error: {0}", ex.ToString());
+                        label1.Text = "Invalid or duplicate credentials. Please try again.";  //if sql error (cant enter to table), inform user
+                    }
                 }
-                catch (MySqlException ex)
+                else
                 {
-                    Console.WriteLine("Error: {0}", ex.ToString());
-                    label1.Text = "Invalid or duplicate credentials. Please try again.";  //if sql error (cant enter to table), inform user
+                    label1.Text = "Your Passwords do not Match. Please try again.";
                 }
             }
-
         }
 
-        private void Password_textbox1_TextChanged(object sender, EventArgs e)
+            private void Password_textbox1_TextChanged(object sender, EventArgs e)
         {
         }
 
