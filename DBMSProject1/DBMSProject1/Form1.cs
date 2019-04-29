@@ -107,7 +107,7 @@ namespace DBMSProject1
                     newPage = new WelcomePage(sql, username);//pass the user to other GUI components
                     newPage.ShowDialog(); //open welcome page
 
-                    this.Close(); //form will close when child is manually closed
+                    //this.Close(); //form will close when child is manually closed
                 }
                 else
                 {
