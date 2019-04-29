@@ -188,6 +188,61 @@ namespace DBMSProject1
             }
         }
 
+        private void SearchDate_Click(object sender, EventArgs e)
+        {
+            if(DayBox.SelectedIndex == -1 || YearBox.SelectedIndex == -1 || MonthBox.SelectedIndex == -1)
+            {
+                ErrorBox.Text = "Error: You must input a date to search";
+            }
+            else//User inputted a date so find out who posted the most blogs
+            {
+                string date = $"{YearBox.Text}-{MonthBox.Text}-{DayBox.Text}";
+                query = "select postuser, Count(*) as posts from (select * from blogs where(pdate = @date))alias group by postuser order by posts desc;";
+                MySqlDataReader reader;
+                command = new MySqlCommand(query, sql);
+                command.Parameters.Add("@date", MySqlDbType.Date).Value = date;//search by the given date
+                try
+                {
+                    reader = command.ExecuteReader(); //read in the data
+                    int max = -1;
+                    List<String> users = new List<String>();
+                    while(reader.Read())
+                    {
+                        if(max == -1)//set the max of the function
+                        {
+                            max = int.Parse(reader[1].ToString());
+                            users.Add(reader[0].ToString());
+                        }
+                        else if(int.Parse(reader[1].ToString()) == max)//tie for max
+                        {
+                            users.Add(reader[0].ToString());
+                        }
+                        else//no more ties so break the loop
+                        {
+                            break;
+                        }
+                    }
+                    reader.Close();
+
+                    if(users.Count > 0)//have data for list
+                    {
+                        String title = $"User(s) who posted the most on {date}";
+                        UserList newPage;
+                        newPage = new UserList(title, users);
+                        newPage.ShowDialog();
+                    }
+                    else
+                    {
+                        ErrorBox.Text = $"Sorry no blogs were found!";
+                    }
+                }
+                catch(MySqlException ex)
+                {
+                    ErrorBox.Text = $"Error: {ex}";
+                }
+            }
+        }
+
         public AdvancedSearchPage(MySqlConnection connection, string username)
         {
             sql = connection;

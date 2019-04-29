@@ -157,6 +157,7 @@
             this.SearchDate.TabIndex = 8;
             this.SearchDate.Text = "Search most posts on date";
             this.SearchDate.UseVisualStyleBackColor = true;
+            this.SearchDate.Click += new System.EventHandler(this.SearchDate_Click);
             // 
             // Tag1
             // 
